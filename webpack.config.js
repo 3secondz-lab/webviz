@@ -188,10 +188,14 @@ module.exports = {
   },
   performance: { hints: false },
   devServer: {
+    host: "localhost",
+    port: 8080,
     contentBase: path.resolve(`${__dirname}/docs/public`),
     hot: true,
     open: true,
+    inline: true,
   },
+  watch: true,
 };
 
 if (process.env.NODE_ENV === "production") {

@@ -109,6 +109,7 @@
     "unist-util-visit": "^1.4.0",
     "url-loader": "^1.1.2",
     "url-search-params": "^1.1.0",
+    "webpack": "^4.20.2",
     "webpack-cli": "^3.3.3",
     "webpack-dev-server": "^3.7.1",
     "worker-loader": "^2.0.0"
