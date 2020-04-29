@@ -114,7 +114,12 @@
     "webpack-dev-server": "^3.7.1",
     "worker-loader": "^2.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "child_process": "^1.0.2",
+    "express": "^4.17.1",
+    "yamljs": "^0.3.0"
+  },
   "scripts": {
     "bootstrap": "npm install && lerna bootstrap --hoist \"{react,react-dom}\"",
     "install-ci": "npm ci && lerna bootstrap --hoist \"{react,react-dom}\"",
