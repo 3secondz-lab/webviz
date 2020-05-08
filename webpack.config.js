@@ -195,7 +195,6 @@ module.exports = {
     open: true,
     inline: true,
   },
-  watch: true,
 };
 
 if (process.env.NODE_ENV === "production") {
