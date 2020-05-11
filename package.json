@@ -115,9 +115,25 @@
     "worker-loader": "^2.0.0"
   },
   "dependencies": {
+    "@dash4/react-xterm": "^0.8.4",
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
     "child_process": "^1.0.2",
     "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "net": "^1.0.2",
+    "node-pty": "^0.9.0",
+    "react-script-tag": "^1.1.2",
+    "react-xterm": "^2.0.4",
+    "tls": "0.0.1",
+    "xterm": "^4.5.0",
+    "xterm-addon-attach": "^0.5.0",
+    "xterm-addon-fit": "^0.3.0",
+    "xterm-addon-search": "^0.6.0",
+    "xterm-addon-serialize": "^0.2.0",
+    "xterm-addon-unicode11": "^0.1.1",
+    "xterm-addon-web-links": "^0.3.0",
+    "xterm-addon-webgl": "^0.6.0",
     "yamljs": "^0.3.0"
   },
   "scripts": {

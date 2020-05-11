@@ -71,3 +71,7 @@ lib/
 
 # reg-suit generated files
 .reg/
+
+out/
+out-test/
+.nyc_output/

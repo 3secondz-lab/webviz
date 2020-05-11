@@ -67,7 +67,8 @@ export function getPanelsByType(): { [type: string]: PanelListItem } {
       for (const item of nonPresetPanels) {
         // $FlowFixMe - bug prevents requiring panelType: https://stackoverflow.com/q/52508434/23649
         const panelType = item.component.panelType;
-        console.assert(panelType && !(panelType in gPanelsByType));
+        console.log("panelType::", panelType);
+        //console.assert(panelType && !(panelType in gPanelsByType));
         gPanelsByType[panelType] = item;
       }
     }
