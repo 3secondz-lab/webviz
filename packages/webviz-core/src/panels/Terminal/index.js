@@ -268,6 +268,7 @@ function TerminalWrap() {
         "windowOptions",
       ];
       const stringOptions = {
+        //cursorBlink: true,
         bellSound: null,
         bellStyle: ["none", "sound"],
         cursorStyle: ["block", "underline", "bar"],
@@ -359,7 +360,7 @@ function TerminalWrap() {
         });
       });
     }
-
+    term.setOption("cursorBlink", true);
     function initAddons(term) {
       const fragment = document.createDocumentFragment();
       Object.keys(addons).forEach((name) => {
@@ -449,7 +450,7 @@ function TerminalWrap() {
           xterm.js: A terminal for the <em style={{ color: "#5DA5D5" }}>web</em>
         </h1>
         <div id="terminal-container" />
-        <div>
+        <div style={{ display: "none" }}>
           <h3>Options</h3>
           <p>
             These options can be set in the <code>Terminal</code> constructor or by using the{" "}
@@ -457,7 +458,7 @@ function TerminalWrap() {
           </p>
           <div id="options-container" />
         </div>
-        <div>
+        <div style={{ display: "none" }}>
           <h3>Addons</h3>
           <p>Addons can be loaded and unloaded on a particular terminal to extend its functionality.</p>
           <div id="addons-container" />
@@ -495,7 +496,7 @@ function TerminalWrap() {
             </div>
           </div>
         </div>
-        <div>
+        <div style={{ display: "none" }}>
           <h3>Style</h3>
           <div>
             <label htmlFor="padding">Padding</label>
