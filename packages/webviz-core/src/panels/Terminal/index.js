@@ -179,10 +179,9 @@ function TerminalWrap() {
         });
       });
       protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
-      socketURL = `${
-        protocol + window.location.hostname
-        // (window.location.port ? ":" + window.location.port : "") +
-      }:${5000}/terminals/`;
+      socketURL = `${protocol + window.location.hostname}:${
+        window.location.port === 8080 ? 5000 : window.location.port // webpack-dev-server 일 경우 port가 8080 으로 오기 때문에 별도의 ws port 로 보내고 production 일 경우는 3000 으로 오기 때문에 한번에 ws port 도 정리함.
+      }/terminals/`;
       term.open(terminalContainer);
       addons.fit.instance.fit();
       term.focus();

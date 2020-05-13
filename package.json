@@ -120,6 +120,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-ws": "^4.0.0",
+    "fs": "0.0.1-security",
     "node-pty": "^0.9.0",
     "os": "^0.1.1",
     "xterm": "^4.5.0",
@@ -159,6 +160,7 @@
     "ci-commands-base": "npm run install-ci && NODE_ENV=production npm run build && npm run lint && npm run flow && npm test",
     "ci-commands-for-cruise-open-source-repo": "npm run ci-commands-base && NODE_ENV=production npm run screenshot-ci",
     "ci-commands-for-cruise-proprietary-repo": "npm run ci-commands-base && NODE_ENV=production npm run screenshot-proprietary-ci",
-    "ci": "npm run ci-commands-for-cruise-open-source-repo && reg-suit run --verbose"
+    "ci": "npm run ci-commands-for-cruise-open-source-repo && reg-suit run --verbose",
+    "server": "NODE_ENV=production && node server.js"
   }
 }
