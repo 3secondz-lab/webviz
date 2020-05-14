@@ -64,6 +64,7 @@ function TerminalWrap() {
     let socketURL;
     let socket;
     let pid;
+    const port = window.location.port === "8080" ? "5000" : window.location.port;
     const addons = {
       attach: {
         name: "attach",
@@ -178,10 +179,9 @@ function TerminalWrap() {
           method: "POST",
         });
       });
+
       protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
-      socketURL = `${protocol + window.location.hostname}:${
-        window.location.port === 8080 ? 5000 : window.location.port // webpack-dev-server 일 경우 port가 8080 으로 오기 때문에 별도의 ws port 로 보내고 production 일 경우는 3000 으로 오기 때문에 한번에 ws port 도 정리함.
-      }/terminals/`;
+      socketURL = `${protocol + window.location.hostname}:${port}/terminals/`;
       term.open(terminalContainer);
       addons.fit.instance.fit();
       term.focus();
@@ -201,7 +201,7 @@ function TerminalWrap() {
         paddingElement.value = "0"; // Set terminal size again to set the specific dimensions on the demo
 
         updateTerminalSize();
-        fetch(`http://localhost:5000/terminals?cols=${term.cols}&rows=${term.rows}`, {
+        fetch(`http://localhost:${port}/terminals?cols=${term.cols}&rows=${term.rows}`, {
           method: "POST",
         }).then((res) => {
           res.text().then((processId) => {
