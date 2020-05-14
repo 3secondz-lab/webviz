@@ -1,7 +1,7 @@
 # 실행방법
 
 - 저장소를 clone 한다.
-- npm run bootstrap 한다. --> leran 로 묶인 모든 패키지들을 한방에 설치
+- npm run bootstrap 한다. --> lern 로 묶인 모든 패키지들을 한방에 설치
 - npm run build 한다 --> 그렇게 설치된 package 들을 build 한다.
 - npm run server 한다 --> production mode 로 3초 webviz 를 실행한다.
 - 브라우저를 열고 http://localhost:3000/app 을 입력한다.
