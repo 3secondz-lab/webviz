@@ -21,19 +21,8 @@ import { Unicode11Addon } from "xterm-addon-unicode11";
 import { WebLinksAddon } from "xterm-addon-web-links";
 import { WebglAddon } from "xterm-addon-webgl";
 
-import Button from "webviz-core/src/components/Button";
-import Dropdown from "webviz-core/src/components/Dropdown";
-import Flex from "webviz-core/src/components/Flex";
-import { Item } from "webviz-core/src/components/Menu";
-// import MessageHistoryDEPRECATED from "webviz-core/src/components/MessageHistoryDEPRECATED";
-// import { useMessagePipeline } from "webviz-core/src/components/MessagePipeline";
 import Panel from "webviz-core/src/components/Panel";
 import PanelToolbar from "webviz-core/src/components/PanelToolbar";
-import TextContent from "webviz-core/src/components/TextContent";
-import filterMap from "webviz-core/src/filterMap";
-import * as PanelAPI from "webviz-core/src/PanelAPI";
-import type { Topic, Message, SubscribePayload, AdvertisePayload } from "webviz-core/src/players/types";
-import { downloadTextFile } from "webviz-core/src/util";
 
 // const RECORD_ALL = "RECORD_ALL";
 

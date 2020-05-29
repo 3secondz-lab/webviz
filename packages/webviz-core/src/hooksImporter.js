@@ -33,6 +33,7 @@ export function panelsByCategory() {
   const StateTransitions = require("webviz-core/src/panels/StateTransitions").default;
   const SubscribeToList = require("webviz-core/src/panels/SubscribeToList").default;
   const Terminal = require("webviz-core/src/panels/Terminal").default;
+  const RqtGui = require("webviz-core/src/panels/Rqt").default;
   // TODO(Esther): Uncomment with Tab panel release
   // const Tab = require("webviz-core/src/panels/Tab").default;
   const TwoDimensionalPlot = require("webviz-core/src/panels/TwoDimensionalPlot").default;
@@ -60,6 +61,7 @@ export function panelsByCategory() {
     // { title: "Tab", component: Tab },
     { title: "Webviz Internals", component: Internals },
     { title: "Web Console", component: Terminal },
+    { title: "Rqt GUI", component: RqtGui },
   ];
 
   const debugging = [

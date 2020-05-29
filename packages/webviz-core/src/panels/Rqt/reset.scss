@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+/* reset */
+*:not(hr) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  //font-family: Roboto, 'Noto Sans KR', sans-serif;
+  letter-spacing: -0.5px;
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+body {
+  position: relative;
+  background: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+  box-sizing: border-box;
+} /* html5shiv.js를 위한 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0;
+  padding: 0;
+  word-break: keep-all;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+ul,
+ol,
+dl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+input,
+select,
+button,
+textarea {
+  margin: 0;
+  padding: 0;
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  // appearance: none;
+  // outline: none;
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  //font-family: 'Noto Sans', sans-serif;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+button {
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 0;
+}
+textarea {
+  resize: none;
+}
+table {
+  border-collapse: collapse;
+  box-sizing: border-box;
+  border: none;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+img {
+  border: 0;
+  -webkit-perspective: 1;
+  perspective: 1;
+}
+fieldset {
+  border: 0;
+}
+legend {
+  display: none;
+}
+caption {
+  display: none;
+}
+
+select::-ms-expand {
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  /* IE 5-7 */
+  filter: alpha(opacity=0);
+  /* Good browsers :) */
+  opacity: 0;
+}
+input::-webkit-input-placeholder {
+  opacity: 1;
+  color: #6c708b;
+  transition: all 0.3s;
+}
+input::-moz-input-placeholder {
+  opacity: 1;
+  color: #6c708b;
+  transition: all 0.3s;
+}
+input:-moz-input-placeholder {
+  opacity: 1;
+  color: #6c708b;
+  transition: all 0.3s;
+}
+input:-ms-input-placeholder {
+  opacity: 1;
+  color: #6c708b;
+  transition: all 0.3s;
+}
+input::placeholder {
+  opacity: 1;
+  color: #6c708b;
+  transition: all 0.3s;
+}
+input::-ms-input-placeholder {
+  opacity: 1;
+  color: #6c708b;
+  transition: all 0.3s;
+}
+input:focus::-webkit-input-placeholder {
+  color: white;
+}
+input:focus::-moz-input-placeholder {
+  color: white;
+}
+input:focus:-moz-input-placeholder {
+  color: white;
+}
+input:focus:-ms-input-placeholder {
+  color: white;
+}
+input:focus::placeholder {
+  color: white;
+}
+input:focus::-ms-input-placeholder {
+  color: white;
+}
+input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+input[type="date"]::-webkit-clear-button {
+  display: none;
+}
+input[type="date"]::-ms-clear {
+  display: none;
+}
+
+html {
+  font-size: 10px;
+}
