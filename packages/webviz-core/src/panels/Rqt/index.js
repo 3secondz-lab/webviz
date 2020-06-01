@@ -289,6 +289,7 @@ const Wrapper = styled.div`
   align-items: stretch;
   margin: 0 auto;
   border: 1px solid #f60;
+  color: #fff;
   .sidebar {
     width: 30%;
     ul {
@@ -308,11 +309,14 @@ const Wrapper = styled.div`
     width: 70%;
     input[type="text"],
     input[type="number"] {
-      border: 1px solid #000;
+      border: 1px solid #fff;
+      font-size: 1.6rem;
+      padding: 0 1rem;
     }
     h1 {
       text-align: center;
       margin: 0 0 4rem 0;
+      font-size: 2.4rem;
     }
     dl {
       display: flex;
@@ -349,8 +353,13 @@ const Wrapper = styled.div`
           }
         }
         select {
-          border: 1px solid #000;
+          border: 1px solid #fff;
           cursor: pointer;
+          color: #fff;
+          font-size: 1.6rem;
+          option {
+            color: #000;
+          }
         }
       }
     }
