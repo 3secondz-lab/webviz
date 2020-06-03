@@ -35,7 +35,7 @@ function RqtGui() {
 
   React.useEffect(() => {
     const resolve = (services) => {
-      const apiForm = {
+      let apiForm = {
         Node: "",
         List: [],
       };
@@ -45,16 +45,16 @@ function RqtGui() {
 
       const list_serv = services.filter((serv) => serv.endsWith("/set_parameters"));
       list_serv.forEach((item, index, array) => {
-        const name = `${item.substring(0, item.length - "/set_parameters".length)}/parameter_descriptions`;
+        const nodeName = `${item.substring(0, item.length - "/set_parameters".length)}/parameter_descriptions`;
         const sub = new ROSLIB.Topic({
           ros,
-          name,
+          name: nodeName,
           messageType: "dynamic_reconfigure/ConfigDescription",
         });
-        sub.subscribe((message) => {
-          apiForm.Node = name;
 
+        sub.subscribe((message) => {
           message.groups[0].parameters.forEach((item, index, array) => {
+            listObj = {};
             const { name, type, level, description, edit_method } = item;
             listObj.Name = name;
             listObj.Type = type;
@@ -81,6 +81,7 @@ function RqtGui() {
                 sizeList.push(listObj);
                 _.find(apiForm.List, (o) => o.Em === true).sizeList = sizeList;
                 listObj = {};
+                sizeList = [];
               });
             } else {
               // For other types
@@ -102,8 +103,13 @@ function RqtGui() {
             }
             sizeList = [];
           });
-          sub.unsubscribe();
+          apiForm.Node = nodeName;
           apiList.push(apiForm);
+          apiForm = {
+            Node: "",
+            List: [],
+          };
+          sub.unsubscribe();
           setNodes(apiList);
         });
       });
