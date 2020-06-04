@@ -14,7 +14,7 @@ import styled from "styled-components";
 import YAML from "yamljs";
 
 import Panel from "webviz-core/src/components/Panel";
-// import PanelToolbar from "webviz-core/src/components/PanelToolbar";
+import PanelToolbar from "webviz-core/src/components/PanelToolbar";
 
 import "./reset.scss";
 
@@ -171,115 +171,118 @@ function RqtGui() {
     runRosapi(dataType, dataName, dataValue);
   };
   return (
-    <Wrapper>
-      <div className="sidebar">
-        <ul>
-          {nodes.map((v, i, t) => (
-            <li
-              key={i}
-              onClick={() => {
-                setServerName(`/${v.Node.split("/")[1]}`);
-                setItem(v.List);
-              }}>
-              {v.Node}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="show-content">
-        <h1>{serverName}</h1>
-        <ul>
-          {item.map((v, i) => (
-            <li key={i}>
-              <dl>
-                <dt>{v.Name}</dt>
-                <dd>
-                  {v.Type === "str" && (
-                    <input
-                      type="text"
-                      name={v.Name}
-                      data-idx={i}
-                      data-type={v.Type}
-                      value={v.Default}
-                      onChange={change}
-                    />
-                  )}
-                  {v.Type === "double" && (
-                    <p className="wrap-item">
-                      <span>{v.Min}</span>
+    <>
+      <PanelToolbar floating />
+      <Wrapper>
+        <div className="sidebar">
+          <ul>
+            {nodes.map((v, i, t) => (
+              <li
+                key={i}
+                onClick={() => {
+                  setServerName(`/${v.Node.split("/")[1]}`);
+                  setItem(v.List);
+                }}>
+                {v.Node}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="show-content">
+          <h1>{serverName}</h1>
+          <ul>
+            {item.map((v, i) => (
+              <li key={i}>
+                <dl>
+                  <dt>{v.Name}</dt>
+                  <dd>
+                    {v.Type === "str" && (
                       <input
-                        type="range"
+                        type="text"
                         name={v.Name}
                         data-idx={i}
                         data-type={v.Type}
                         value={v.Default}
-                        min={v.Min}
-                        max={v.Max}
                         onChange={change}
                       />
-                      <span>{v.Max}</span>
+                    )}
+                    {v.Type === "double" && (
+                      <p className="wrap-item">
+                        <span>{v.Min}</span>
+                        <input
+                          type="range"
+                          name={v.Name}
+                          data-idx={i}
+                          data-type={v.Type}
+                          value={v.Default}
+                          min={v.Min}
+                          max={v.Max}
+                          onChange={change}
+                        />
+                        <span>{v.Max}</span>
+                        <input
+                          type="number"
+                          name={v.Name}
+                          data-idx={i}
+                          data-type={v.Type}
+                          step="0.1"
+                          value={v.Default}
+                          onChange={change}
+                        />
+                      </p>
+                    )}
+                    {v.Type === "bool" && (
                       <input
-                        type="number"
+                        type="checkbox"
+                        data-type={v.Type}
                         name={v.Name}
                         data-idx={i}
-                        data-type={v.Type}
-                        step="0.1"
-                        value={v.Default}
+                        checked={v.Default}
                         onChange={change}
                       />
-                    </p>
-                  )}
-                  {v.Type === "bool" && (
-                    <input
-                      type="checkbox"
-                      data-type={v.Type}
-                      name={v.Name}
-                      data-idx={i}
-                      checked={v.Default}
-                      onChange={change}
-                    />
-                  )}
-                  {v.Type === "int" && !v.Em && (
-                    <p className="wrap-item">
-                      <span>{v.Min}</span>
-                      <input
-                        type="range"
-                        name={v.Name}
-                        data-idx={i}
-                        data-type={v.Type}
-                        value={v.Default}
-                        min={v.Min}
-                        max={v.Max}
-                        onChange={change}
-                      />
-                      <span>{v.Max}</span>
-                      <input
-                        type="number"
-                        name={v.Name}
-                        data-idx={i}
-                        data-type={v.Type}
-                        step="1"
-                        value={v.Default}
-                        onChange={change}
-                      />
-                    </p>
-                  )}
-                  {v.Type === "int" && v.Em && (
-                    <select onChange={change} data-type={v.Type} name={v.Name} data-em={true}>
-                      {v.sizeList.map((v, i) => (
-                        <option key={i} value={v.Value}>
-                          {v.Name} ({v.Value})
-                        </option>
-                      ))}
-                    </select>
-                  )}
-                </dd>
-              </dl>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </Wrapper>
+                    )}
+                    {v.Type === "int" && !v.Em && (
+                      <p className="wrap-item">
+                        <span>{v.Min}</span>
+                        <input
+                          type="range"
+                          name={v.Name}
+                          data-idx={i}
+                          data-type={v.Type}
+                          value={v.Default}
+                          min={v.Min}
+                          max={v.Max}
+                          onChange={change}
+                        />
+                        <span>{v.Max}</span>
+                        <input
+                          type="number"
+                          name={v.Name}
+                          data-idx={i}
+                          data-type={v.Type}
+                          step="1"
+                          value={v.Default}
+                          onChange={change}
+                        />
+                      </p>
+                    )}
+                    {v.Type === "int" && v.Em && (
+                      <select onChange={change} data-type={v.Type} name={v.Name} data-em={true}>
+                        {v.sizeList.map((v, i) => (
+                          <option key={i} value={v.Value}>
+                            {v.Name} ({v.Value})
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                  </dd>
+                </dl>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Wrapper>
+    </>
   );
 }
 
