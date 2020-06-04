@@ -81,7 +81,7 @@ function RqtGui() {
                 sizeList.push(listObj);
                 _.find(apiForm.List, (o) => o.Em === true).sizeList = sizeList;
                 listObj = {};
-                sizeList = [];
+                // sizeList = [];
               });
             } else {
               // For other types
