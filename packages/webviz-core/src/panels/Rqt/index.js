@@ -217,6 +217,7 @@ function RqtGui() {
                           value={v.Default}
                           min={v.Min}
                           max={v.Max}
+                          step="0.001"
                           onChange={change}
                         />
                         <span>{v.Max}</span>
@@ -225,7 +226,7 @@ function RqtGui() {
                           name={v.Name}
                           data-idx={i}
                           data-type={v.Type}
-                          step="0.1"
+                          step="0.001"
                           value={v.Default}
                           onChange={change}
                         />
@@ -252,6 +253,7 @@ function RqtGui() {
                           value={v.Default}
                           min={v.Min}
                           max={v.Max}
+                          step="1"
                           onChange={change}
                         />
                         <span>{v.Max}</span>
